@@ -1,0 +1,12 @@
+version: '3'
+services: 
+    ydlidar:
+        image: ydlidar_ros2
+        container_name: ydlidar
+        tty: true
+        command: bash -c "source ./install/setup.sh && ros2 launch ydlidar ydlidar_launch.py"
+        network_mode: host
+        volumes: 
+          - $PWD/conf:/colcon_ws/install/ydlidar/share/ydlidar/params
+          - $PWD/launch:/colcon_ws/install/ydlidar/share/ydlidar/launch
+        privileged: true
