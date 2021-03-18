@@ -1,5 +1,4 @@
-FROM ros:foxy-ros-base-l4t-r32.4.3
-
+FROM osrf/ros2
 RUN apt-get update -y 
 
 RUN mkdir /colcon_ws/src -p
